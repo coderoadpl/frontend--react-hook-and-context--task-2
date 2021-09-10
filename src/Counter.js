@@ -1,9 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { useStateCustom } from './useStateCustom'
 
-export const Counter = () => {
-  const [number, setNumber] = useStateCustom(15)
+export const Counter = (props) => {
+  const { componentId } = props
+
+  const [number, setNumber] = useStateCustom(15, componentId)
 
   const inc = () => setNumber(number + 1)
   const dec = function () { setNumber(number - 1) }
@@ -25,6 +28,10 @@ export const Counter = () => {
       </button>
     </>
   )
+}
+
+Counter.propTypes = {
+  componentId: PropTypes.string
 }
 
 export default Counter

@@ -1,14 +1,14 @@
 import { renderRoot } from './index'
 
-let state
+const state = {}
 
-export const useStateCustom = (initialState) => {
-  if (state === undefined) state = initialState
+export const useStateCustom = (initialState, componentId) => {
+  if (state[componentId] === undefined) state[componentId] = initialState
 
   return [
-    state,
-    (newState) => {
-      state = newState
+    state[componentId],
+    (newComponentState) => {
+      state[componentId] = newComponentState
       renderRoot()
     }
   ]

@@ -9,8 +9,8 @@ export const App = () => {
       <h2>
         Hooks
       </h2>
-      <Counter />
-      <Counter />
+      <Counter componentId={'counter-1'} />
+      <Counter componentId={'counter-2'} />
       <h2>
         Class
       </h2>
