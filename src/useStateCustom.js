@@ -1,8 +1,15 @@
+import { renderRoot } from './index'
+
+let state
+
 export const useStateCustom = (initialState) => {
+  if (state === undefined) state = initialState
+
   return [
-    initialState,
-    () => {
-      console.log('Im fake!')
+    state,
+    (newState) => {
+      state = newState
+      renderRoot()
     }
   ]
 }

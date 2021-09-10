@@ -3,7 +3,7 @@ import React from 'react'
 import { useStateCustom } from './useStateCustom'
 
 export const Counter = () => {
-  const [number, setNumber] = useStateCustom(5)
+  const [number, setNumber] = useStateCustom(15)
 
   const inc = () => setNumber(number + 1)
   const dec = function () { setNumber(number - 1) }
